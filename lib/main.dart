@@ -12,27 +12,22 @@ void main() {
       home: Scaffold(
         appBar: AppBar(
           title: Text("My App"),
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: const Color.fromARGB(255, 137, 34, 255),
           centerTitle: true,
         ),
-        body: Text("Hello Father!"),
+        body: Home(),
+        // body: Text("Hello Father!"),
       ),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+    return Text("Hello Flutter! Step2");
   }
 }
 
