@@ -8,47 +8,32 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  int quantity = 10;
-
-  void IncrementQuantity() {
-    setState(() {
-      quantity++;
-    });
-  }
-
-  void decrementQuantity() {
-    setState(() {
-      quantity = quantity > 0 ? quantity - 1 : 0;
-    });
-  }
+  List data = ["สมชาย", "สมหญิง", "สมศรี", "สมปอง", "สมจิตร"];
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "Quantity: $quantity",
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: const Color.fromARGB(255, 231, 2, 2),
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(10),
           ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: IncrementQuantity,
-                child: const Text("Increment"),
-              ),
-              const SizedBox(width: 20),
-              ElevatedButton(
-                onPressed: decrementQuantity,
-                child: const Text("Decrement"),
-              ),
-            ],
+          margin: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+          padding: EdgeInsets.all(40),
+          child: Text(
+            data[index],
+            style: TextStyle(
+              fontSize: 20,
+              color: const Color.fromARGB(255, 0, 0, 0),
+            ),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
