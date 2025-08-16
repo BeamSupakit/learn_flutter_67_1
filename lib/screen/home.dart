@@ -1,27 +1,58 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        padding: const EdgeInsets.all(50),
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: const Text(
-          "Hello Flutter Step4",
-          style: TextStyle(
-            fontSize: 30,
-            color: Colors.blueAccent,
-            fontWeight: FontWeight.bold,
+    // return Row(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      // mainAxisAlignment: MainAxisAlignment.center,
+      // mainAxisAlignment: MainAxisAlignment.end,
+      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      // crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Container(
+          color: Colors.redAccent,
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Text(
+            "Hello",
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
           ),
         ),
-      ),
+        Container(
+          color: Colors.redAccent,
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Text(
+            "Hello",
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.redAccent,
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: Text(
+            "Hello",
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
