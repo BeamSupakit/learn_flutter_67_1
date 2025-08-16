@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screen/home.dart';
+import 'package:learn_flutter_67_1/screen/item.dart';
+
 void main() {
   // runApp(const MyApp());
 
@@ -15,12 +17,11 @@ void main() {
           backgroundColor: const Color.fromARGB(255, 137, 34, 255),
           centerTitle: true,
         ),
-        body: Home(),
+        body: Item(),
       ),
     ),
   );
 }
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
