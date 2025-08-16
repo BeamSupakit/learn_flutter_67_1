@@ -14,32 +14,37 @@ class _ItemState extends State<Item> {
     return ListView.builder(
       itemCount: personList.length,
       itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: const Color.fromARGB(255, 231, 2, 2),
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(10),
+        final person = personList[index];
+        return Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(color: person.job.color, width: 2),
           ),
-          margin: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
-          padding: EdgeInsets.all(40),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                personList[index].name,
-                style: TextStyle(fontSize: 20, color: Colors.blue),
+          margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+          elevation: 3,
+          child: ListTile(
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                person.job.image,
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
               ),
-              Text(
-                personList[index].age.toString(),
-                style: TextStyle(fontSize: 20, color: Colors.green),
-              ),
-              Text(
-                personList[index].job,
-                style: TextStyle(fontSize: 20, color: Colors.red),
-              ),
-            ],
+            ),
+            title: Text(
+              person.name,
+              style: const TextStyle(fontSize: 20, color: Colors.blue),
+            ),
+            subtitle: Text(
+              "${person.age} ปี • ${person.job.title}",
+              style: const TextStyle(fontSize: 16, color: Colors.black87),
+            ),
+            onTap: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("คุณเลือก ${person.name}")),
+              );
+            },
           ),
         );
       },
