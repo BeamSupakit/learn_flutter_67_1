@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_67_1/model/person.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -34,11 +35,15 @@ class _ItemState extends State<Item> {
             ),
             title: Text(
               person.name,
-              style: const TextStyle(fontSize: 20, color: Colors.blue),
+              style: GoogleFonts.kanit(
+                textStyle: const TextStyle(fontSize: 20, color: Colors.blue),
+              ),
             ),
             subtitle: Text(
               "${person.age} ปี • ${person.job.title}",
-              style: const TextStyle(fontSize: 16, color: Colors.black87),
+              style: GoogleFonts.kanit(
+                textStyle: const TextStyle(fontSize: 16, color: Colors.black87),
+              ),
             ),
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(
