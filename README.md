@@ -1,4 +1,4 @@
-# 🌊 Flood Warning System for Phuket Municipality
+# 🌊 Flood Warning System for Phuket 
 
 ## 📌 Project Title & Description
 
